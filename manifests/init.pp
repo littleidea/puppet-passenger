@@ -6,7 +6,7 @@ define passenger::install($version) {
   }
 
   exec { passenger-install:
-         command => "/usr/bin/yes \"\" | /usr/bin/passenger-install-apache2-module"
+         command => "/usr/bin/yes \"\" | /usr/bin/passenger-install-apache2-module",
          creates => "/usr/lib/ruby/gems/1.8/gems/passenger-$version/ext/apache2/mod_passenger.so",
          require => Package['passenger']
   }

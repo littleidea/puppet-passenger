@@ -10,7 +10,7 @@ define passenger::enable($version) {
 
   file { passenger-conf:
          path => "/etc/apache2/mods-available/passenger.conf",
-         content => template(passenger/passenger.conf.erb),
+         content => template("passenger/passenger.conf.erb"),
          mode => 644,
          require => Exec['passenger-install']
   }
