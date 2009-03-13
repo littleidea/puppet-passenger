@@ -5,7 +5,7 @@ define passenger::enable($version) {
          path => "/etc/apache2/mods-available/passenger.load",
          content => "LoadModule passenger_module /usr/lib/ruby/gems/1.8/gems/passenger-$version/ext/apache2/mod_passenger.so\n",
          mode => 644,
-         require => Exec['passenger-install']
+         require => Exec['passenger-install'],
          notify => Exec['a2enmod']
   }
 
